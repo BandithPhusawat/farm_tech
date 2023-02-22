@@ -7,3 +7,8 @@
     display: flex;
     justify-content: center;
 }
+
+
+.login-card {
+    text-align: center;
+}

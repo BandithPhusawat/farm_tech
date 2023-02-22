@@ -1,6 +1,6 @@
 import { useState , useEffect } from 'react'
 
-import { Button, Modal, Form, Alert , Container } from 'react-bootstrap';
+import { Button, Modal, Form, Alert , Container , Card, Image, Col, Row, ButtonGroup} from 'react-bootstrap';
 
 function loginComponent(Props :any) {
 
@@ -41,54 +41,50 @@ function loginComponent(Props :any) {
     }
 
   return (
-    <div className="modal show"
-        style={{ display: `${trigger}`, position: 'initial' }}
-    >
-        <Modal.Dialog>
-            <Modal.Header 
-                style={{
-                    display: 'grid',
-                    justifyContent: 'center'
-                }}
-                
-            >
-                <Modal.Title>
-                    กรอกข้อมูลเพื่อเข้าสู่ระบบ
-                </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-                <Form.Group className='md-3' controlId='formUsername' >
-                    <Form.Label className='input-login'>Username ( กรอกอีเมลของคุณ )</Form.Label>
-                    <Form.Control 
-                        type='email' 
-                        placeholder='Username' 
-                        style={{ textAlign: 'center' }}
-                        value={ usename || "" }
-                        onChange={ usernameHandler }
-                    />
-                    <Alert variant='danger' style={{ height: '30px', textAlign: 'center', paddingTop: '1px', display: `${errUsename}` }}>
-                        กรุณากรอกอีเมล์ของคุณ
-                    </Alert>
-                </Form.Group>
-               <Form.Group className='md-3' controlId='formPassword' >
-                    <Form.Label className='input-login'>Password ( กรอกรหัสผ่านของคุณ )</Form.Label>
-                    <Form.Control
-                        type='password'
-                        placeholder='Password'
-                        style={{ textAlign: 'center' }}
-                        value={ password || ""}
-                        onChange={ passwordHandler }
-                    />
-               </Form.Group>
-            </Modal.Body>
-                <Container style={{ paddingBottom: '10px' }}>
-                    <div className="col-md-12 text-center">
-                        <Button variant='warning' type='button' onClick={loginHandler}>เข้าสู่ระบบ</Button>
-                    </div>
-
-                </Container>
-        </Modal.Dialog>
-    </div>
+    <>
+        <Container style={{ display: `${trigger}` , padding:'300px'}} className='login-card'>
+            <Row style={{ borderRadius: '1rem', backgroundColor: '#efecf2' , paddingBlock: '30px'}}>
+                <Col xs={12} style={{ backgroundColor:'' }}>
+                    <Card.Header>
+                        <Card.Title ><h2>เข้าสู่ระบบ</h2></Card.Title>
+                            <Card.Body>
+                        <Form.Group className='md-3' controlId='formUsername' >
+                        <Form.Label className='input-login'>Username ( กรอกอีเมลของคุณ )</Form.Label>
+                            <Form.Control 
+                                    type='email' 
+                                    placeholder='Username' 
+                                    style={{ textAlign: 'center' }}
+                                    value={ usename || "" }
+                                    onChange={ usernameHandler }
+                                />
+                                <Alert variant='danger' style={{ height: '30px', textAlign: 'center', paddingTop: '1px', display: `${errUsename}` }}>
+                                    กรุณากรอกอีเมล์ของคุณ
+                                </Alert>
+                            </Form.Group>
+                            <Form.Group className='md-3' controlId='formPassword' >
+                                <Form.Label className='input-login'>Password ( กรอกรหัสผ่านของคุณ )</Form.Label>
+                                <Form.Control
+                                    type='password'
+                                    placeholder='Password'
+                                    style={{ textAlign: 'center' }}
+                                    value={ password || ""}
+                                    onChange={ passwordHandler }
+                                />
+                            </Form.Group>
+                            </Card.Body>
+                            <Card.Footer>
+                                <Container style={{ paddingBottom: '10px', paddingTop: '1.5rem' }}>
+                                    <div className="col-md-12 text-center">
+                                        <Button variant='warning' type='button' onClick={loginHandler}>เข้าสู่ระบบ</Button>
+                                    </div>  
+                                </Container>
+                            </Card.Footer>
+                    </Card.Header>
+                </Col>
+            </Row>
+        </Container>
+    
+    </>
   )
 }
 
