@@ -42,9 +42,9 @@ function loginComponent(Props :any) {
 
   return (
     <>
-        <Container style={{ display: `${trigger}` , padding:'300px'}} className='login-card'>
+        <Container style={{ display: `${trigger}` , paddingTop:'300px'}} className='login-card'>
             <Row style={{ borderRadius: '1rem', backgroundColor: '#efecf2' , paddingBlock: '30px'}}>
-                <Col xs={12} style={{ backgroundColor:'' }}>
+                <Col xs={12} >
                     <Card.Header>
                         <Card.Title ><h2>เข้าสู่ระบบ</h2></Card.Title>
                             <Card.Body>
@@ -52,7 +52,7 @@ function loginComponent(Props :any) {
                         <Form.Label className='input-login'>Username ( กรอกอีเมลของคุณ )</Form.Label>
                             <Form.Control 
                                     type='email' 
-                                    placeholder='Username' 
+                                    placeholder='email ( อีเมล )' 
                                     style={{ textAlign: 'center' }}
                                     value={ usename || "" }
                                     onChange={ usernameHandler }
@@ -65,7 +65,7 @@ function loginComponent(Props :any) {
                                 <Form.Label className='input-login'>Password ( กรอกรหัสผ่านของคุณ )</Form.Label>
                                 <Form.Control
                                     type='password'
-                                    placeholder='Password'
+                                    placeholder='Password ( รหัสผ่าน ) '
                                     style={{ textAlign: 'center' }}
                                     value={ password || ""}
                                     onChange={ passwordHandler }
@@ -83,7 +83,6 @@ function loginComponent(Props :any) {
                 </Col>
             </Row>
         </Container>
-    
     </>
   )
 }
