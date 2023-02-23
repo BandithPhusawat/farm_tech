@@ -42,9 +42,9 @@ function loginComponent(Props :any) {
 
   return (
     <>
-        <Container style={{ display: `${trigger}` , paddingTop:'300px'}} className='login-card'>
-            <Row style={{ borderRadius: '1rem', backgroundColor: '#efecf2' , paddingBlock: '30px'}}>
-                <Col xs={12} >
+        <Container style={{ display: `${trigger}` , paddingTop:'250px'}} className='login-card'>
+            <Row style={{ borderRadius: '1rem', backgroundColor: '#efecf2' , paddingBlock: '15px'}} className='m-4'>
+                <Col xs={12}  >
                     <Card.Header>
                         <Card.Title ><h2>เข้าสู่ระบบ</h2></Card.Title>
                             <Card.Body>
@@ -54,7 +54,7 @@ function loginComponent(Props :any) {
                                     type='email' 
                                     placeholder='email ( อีเมล )' 
                                     style={{ textAlign: 'center' }}
-                                    value={ usename || "" }
+                                    value = { `${usename}` || '' }
                                     onChange={ usernameHandler }
                                 />
                                 <Alert variant='danger' style={{ height: '30px', textAlign: 'center', paddingTop: '1px', display: `${errUsename}` }}>
@@ -67,7 +67,7 @@ function loginComponent(Props :any) {
                                     type='password'
                                     placeholder='Password ( รหัสผ่าน ) '
                                     style={{ textAlign: 'center' }}
-                                    value={ password || ""}
+                                    value={ `${password}` || '' }
                                     onChange={ passwordHandler }
                                 />
                             </Form.Group>
